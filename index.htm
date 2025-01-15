@@ -2558,7 +2558,7 @@
                     </div>
                 </div>
                 <div class="framer-1dncs4e" data-framer-name="chart legend" name="chart legend">
-                
+
                     <div class="framer-3f98js-container">
                         <div class="framer-FN1b7 framer-1upjpbs framer-v-1upjpbs" data-border="true"
                              data-framer-name="base"
@@ -2758,7 +2758,8 @@
                                  style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                                  data-framer-component-type="RichTextContainer"><h5
                                     style="--font-selector:R0Y7UHJlc3MgU3RhcnQgMlAtcmVndWxhcg==;--framer-font-family:&quot;Press Start 2P&quot;, sans-serif;--framer-font-size:14px;--framer-line-height:20px;--framer-text-alignment:center;--framer-text-color:rgb(247, 247, 247)"
-                                    class="framer-text">Now go to raydium.io and paste the $ACAI Contract Address to swap your SOL.</h5></div>
+                                    class="framer-text">Now go to raydium.io and paste the $ACAI Contract Address to
+                                swap your SOL.</h5></div>
                         </div>
                     </div>
                     <div class="framer-1q368e7" data-border="true" data-framer-name="text" name="text">
@@ -2784,7 +2785,8 @@
                                  style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                                  data-framer-component-type="RichTextContainer"><h5
                                     style="--font-selector:R0Y7UHJlc3MgU3RhcnQgMlAtcmVndWxhcg==;--framer-font-family:&quot;Press Start 2P&quot;, sans-serif;--framer-font-size:14px;--framer-line-height:20px;--framer-text-alignment:center;--framer-text-color:rgb(255, 255, 255)"
-                                    class="framer-text">Now you’re all set! Welcome aboard the next rocket to the moon.</h5></div>
+                                    class="framer-text">Now you’re all set! Welcome aboard the next rocket to the
+                                moon.</h5></div>
                         </div>
                     </div>
                 </div>
@@ -2944,12 +2946,13 @@
                                                                                       style="display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:contain">
                                 </div>
                             </div>
-                        
+
                             <div class="framer-bno65e"
                                  style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                                  data-framer-component-type="RichTextContainer"><h5
                                     style="--font-selector:R0Y7UHJlc3MgU3RhcnQgMlAtcmVndWxhcg==;--framer-font-family:&quot;Press Start 2P&quot;, sans-serif;--framer-font-size:14px;--framer-line-height:20px;--framer-text-alignment:center;--framer-text-color:rgb(247, 247, 247)"
-                                    class="framer-text">Now go to raydium.io and paste the $ACAI Contract Address to swap your SOL.</h5></div>
+                                    class="framer-text">Now go to raydium.io and paste the $ACAI Contract Address to
+                                swap your SOL.</h5></div>
                         </div>
                     </div>
                     <div class="framer-1q368e7" data-border="true" data-framer-name="text" name="text">
@@ -2975,7 +2978,8 @@
                                  style="outline:none;display:flex;flex-direction:column;justify-content:flex-start;flex-shrink:0;transform:none"
                                  data-framer-component-type="RichTextContainer"><h5
                                     style="--font-selector:R0Y7UHJlc3MgU3RhcnQgMlAtcmVndWxhcg==;--framer-font-family:&quot;Press Start 2P&quot;, sans-serif;--framer-font-size:9px;--framer-line-height:20px;--framer-text-alignment:center;--framer-text-color:rgb(255, 255, 255)"
-                                    class="framer-text">Now you’re all set! Welcome aboard the next rocket to the moon.</h5></div>
+                                    class="framer-text">Now you’re all set! Welcome aboard the next rocket to the
+                                moon.</h5></div>
                         </div>
                     </div>
                 </div>
@@ -3052,328 +3056,429 @@
             </div>
         </div>
     </div>
-    <div id="chat-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <button class="open-ai-btn" onclick="openForm()">Open AI</button>
+    <div class="blur" id="blur"></div>
+
+    <div id="chat-container" class="form-container">
+        <button class="close-btn" id="send-btn" onclick="closeForm()">x</button>
         <div id="messages">
-           <div class="message bot">
-              <div class="avatar bot-avatar"></div>
-              <div class="text bot-text">
-                 Hello! How can I help?
-              </div>
-           </div>
+            <div class="message bot">
+                <div class="avatar bot-avatar"></div>
+                <div class="text bot-text">
+                    Hello! How can I help?
+                </div>
+            </div>
         </div>
         <div id="input-container">
-           <input
-              type="text"
-              id="user-input"
-              placeholder="Enter your message"
-           />
-           <button id="send-btn" onclick="sendMessage()">
-              Send
-           </button>
+            <input type="text" id="user-input" placeholder="Enter your message" />
+            <button id="send-btn" onclick="sendMessage()">Send</button>
         </div>
-     </div>
-    
-     <style>
-        #chat-container {
-           width: 800px;
-           height: 450px;
-           background: linear-gradient(to top, #2369aa, #57b7ff);
-           border-radius: 15px;
-           padding: 10px;
-           border: 2px solid black;
-           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-           display: flex;
-           flex-direction: column;
-           justify-content: space-between;
-           z-index: 10;
-        }
-    
-        #messages {
-           flex-grow: 1;
-           padding: 10px;
-           overflow-y: auto;
-        }
-    
-        #messages::-webkit-scrollbar {
-           width: 10px;
-        }
-    
-        #messages::-webkit-scrollbar-track {
-           background: #57b7ff;
-           border-radius: 10px;
-        }
-    
-        #messages::-webkit-scrollbar-thumb {
-           background: #2369aa; /* Цвет ползунка */
-           border-radius: 10px;
-           border: 2px solid #57b7ff;
-        }
-    
-        #messages::-webkit-scrollbar-thumb:hover {
-           background: #1c5a90; /* Затемнение при наведении */
-        }
-    
-        .message {
-           display: flex;
-           align-items: center;
-           margin-bottom: 10px;
-        }
-    
-        .user {
-           justify-content: flex-end;
-        }
-    
-        .bot {
-           justify-content: flex-start;
-        }
-    
-        .avatar {
-           width: 35px;
-           height: 35px;
-           border-radius: 50%;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-weight: bold;
-           font-size: 18px;
-        }
-    
-        .bot-avatar {
-           background: url('./source/img/logo.png') no-repeat
-              center / cover;
-           margin-right: 10px;
-           border-radius: 50%;
-           width: 40px;
-           color: white;
-           border: 2px solid white;
-        }
-    
-        .user-avatar {
-           background: white;
-           color: black;
-           border: 2px solid black;
-           margin-left: 10px;
-        }
-    
-        .text {
-           padding: 8px;
-           border-radius: 10px;
-           border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-    
-        .bot-text {
-           background-color: rgba(255, 255, 255, 0.3);
-        }
-    
-        .user-text {
-           background-color: rgba(0, 0, 0, 0.3);
-           color: white;
-           border-color: rgba(0, 0, 0, 0.6);
-        }
-    
-        #input-container {
-           display: flex;
-           padding: 10px;
-           background-color: rgba(0, 0, 0, 0.2);
-           border-radius: 10px;
-        }
-    
-        #user-input {
-           flex-grow: 1;
-           padding: 10px;
-           border: none;
-           border-radius: 5px;
-           background-color: #22385e;
-           color: white;
-           outline: none;
-        }
-    
-        #send-btn {
-           background: linear-gradient(
-              to bottom,
-              #57b7ff,
-              #2369aa
-           );
-           border: none;
-           padding: 10px 15px;
-           margin-left: 10px;
-           border-radius: 5px;
-           cursor: pointer;
-           box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-    
-        #send-btn:hover {
-           opacity: 0.8;
-        }
-    
-        @media (max-width: 1400px) {
-           #chat-container {
-              width: 600px;
-              height: 350px;
-           }
-        }
-    
-        @media (max-width: 1100px) {
-           #chat-container {
-              width: 100%;
-              height: 500px;
-           }
-        }
-     </style>
-    
-     <script>
-        document
-           .getElementById('user-input')
-           .addEventListener('keypress', function (event) {
-              if (event.key === 'Enter') {
-                 sendMessage();
-              }
-           });
-    
-        let chatHistory =
-           JSON.parse(sessionStorage.getItem('chatHistory')) || [];
-    
-        const saveChatHistory = (newHistory) => {
-           sessionStorage.setItem(
-              'chatHistory',
-              JSON.stringify(newHistory)
-           );
-        };
-    
-        const scrollToBottom = () => {
-           const messagesDiv = document.getElementById('messages');
-           messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        };
-    
-        async function sendMessage() {
-           const userInput =
-              document.getElementById('user-input').value;
-           if (!userInput.trim()) return;
-    
-           const messagesDiv = document.getElementById('messages');
-           const userMessage = document.createElement('div');
-           userMessage.className = 'message user';
-    
-           const userAvatar = document.createElement('div');
-           userAvatar.className = 'avatar user-avatar';
-           userAvatar.textContent = 'U';
-    
-           const userText = document.createElement('div');
-           userText.className = 'text user-text';
-           userText.textContent = userInput;
-    
-           userMessage.appendChild(userText);
-           userMessage.appendChild(userAvatar);
-           messagesDiv.appendChild(userMessage);
-    
-           document.getElementById('user-input').value = '';
-    
-           chatHistory.push({ message: userInput, isUser: true });
-           saveChatHistory(chatHistory);
-    
-           const botTypingMessage = document.createElement('div');
-           botTypingMessage.className = 'message bot';
-           botTypingMessage.innerHTML =
-              '<div class="text bot-text">Liqui is typing...</div>';
-           messagesDiv.appendChild(botTypingMessage);
-    
-           scrollToBottom();
+    </div>
 
-           const localBackendUrl ="http://localhost:4000/chat";
-           const backendUrl =
-                 'https://back-sp9v.onrender.com/chat';
-    
-           try {
-              
-              const response = await fetch(backendUrl, {
-                 method: 'POST',
-                 headers: { 'Content-Type': 'application/json' },
-                 body: JSON.stringify({
-                    messages: chatHistory.slice(-10)
-                 })
-              });
-    
-              if (!response.ok)
-                 throw new Error(
-                    `Server error: ${response.status}`
-                 );
-    
-              const data = await response.json();
-    
-              messagesDiv.removeChild(botTypingMessage);
-              const botMessage = document.createElement('div');
-              botMessage.className = 'message bot';
-    
-              const botAvatar = document.createElement('div');
-              botAvatar.className = 'avatar bot-avatar';
-    
-              const botText = document.createElement('div');
-              botText.className = 'text bot-text';
-              botText.textContent = data.reply || 'No answer';
-    
-              botMessage.appendChild(botAvatar);
-              botMessage.appendChild(botText);
-              messagesDiv.appendChild(botMessage);
-    
-              chatHistory.push({
-                 message: data.reply,
-                 isUser: false
-              });
-              saveChatHistory(chatHistory);
-           } catch (error) {
-              const errorMessage = document.createElement('div');
-              errorMessage.className = 'message bot';
-              errorMessage.innerHTML =
-                 '<div class="text bot-text">Error sending</div>';
-              messagesDiv.appendChild(errorMessage);
-              console.error('Error:', error);
-           }
-    
-           scrollToBottom();
+
+
+    <style>
+.open-ai-btn{
+    position: fixed;
+    top: 50%;
+    right: 0;
+}
+
+        .close-btn{
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-self: flex-end;
+            align-items: center;
+            font-size: 17px;
         }
-    
+        .blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            backdrop-filter: blur(3px);
+            visibility: hidden;
+            z-index: 5;
+            /* transition: visibility 0s 0.5s, filter 0.3s ease; Плавний перехід */
+        }
+
+        .visible{
+            visibility: visible !important;
+        }
+        
+
+        /* Chat container styling, initially hidden */
+        #chat-container {
+            width: 800px;
+            height: 450px;
+            background: linear-gradient(to top, #2369aa, #57b7ff);
+            border-radius: 15px;
+            padding: 10px;
+            border: 2px solid black;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            visibility: hidden;  /* Initially hidden */
+            opacity: 0;  /* Initially invisible */
+            display: none; /* Chat container is not displayed */
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 50;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s ease-out, visibility 0s 0.5s, transform 0.5s ease-out;
+        }
+
+        /* Make the chat container visible and animate it */
+        #chat-container.visible {
+            visibility: visible;
+            opacity: 1;  /* Fade it in */
+            transform: translate(-50%, -50%) scale(1);
+            display: flex;  /* Make the container displayed */
+        }
+
+        /* Scrollbar styling */
+        #messages {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        #messages::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        #messages::-webkit-scrollbar-track {
+            background: #57b7ff;
+            border-radius: 10px;
+        }
+
+        #messages::-webkit-scrollbar-thumb {
+            background: #2369aa;
+            border-radius: 10px;
+            border: 2px solid #57b7ff;
+        }
+
+        #messages::-webkit-scrollbar-thumb:hover {
+            background: #1c5a90;
+        }
+
+        /* Styling for messages */
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .user {
+            justify-content: flex-end;
+        }
+
+        .bot {
+            justify-content: flex-start;
+        }
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .bot-avatar {
+            background: url('./source/img/logo.png') no-repeat center / cover;
+            margin-right: 10px;
+            border-radius: 50%;
+            width: 40px;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .user-avatar {
+            background: white;
+            color: black;
+            border: 2px solid black;
+            margin-left: 10px;
+        }
+
+        .text {
+            padding: 8px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .bot-text {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .user-text {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border-color: rgba(0, 0, 0, 0.6);
+        }
+
+        #input-container {
+            display: flex;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        #user-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #22385e;
+            color: white;
+            outline: none;
+        }
+
+        #send-btn {
+            background: linear-gradient(to bottom, #57b7ff, #2369aa);
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #send-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 1400px) {
+            #chat-container {
+                width: 600px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            #chat-container {
+                width: 100%;
+                height: 500px;
+            }
+        }
+
+
+    </style>
+
+    <script>
+function openForm() {
+    const chatContainer = document.getElementById("chat-container");
+    const blur = document.getElementById("blur");
+    chatContainer.classList.add("visible");  // Make the chat container visible
+    blur.classList.add("visible");  // Make the blur element visible
+    document.body.classList.add("blurred");  // Add the blur effect to the body
+}
+
+function closeForm() {
+    const chatContainer = document.getElementById("chat-container");
+    const blur = document.getElementById("blur");
+    chatContainer.classList.remove("visible");  // Hide the chat container
+    blur.classList.remove("visible");  // Hide the blur element
+    document.body.classList.remove("blurred");  // Remove the blur effect from the body
+}
+
+// Close the form when clicking outside the form container (on the blurred area)
+document.getElementById("blur").addEventListener("click", function() {
+    closeForm();  // Close the form and disable blur when clicking the blur background
+});
+
+
+
+    </script>
+
+
+
+
+    <script>
+        document
+            .getElementById('user-input')
+            .addEventListener('keypress', function (event) {
+                if (event.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+        let chatHistory =
+            JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+
+        const saveChatHistory = (newHistory) => {
+            sessionStorage.setItem(
+                'chatHistory',
+                JSON.stringify(newHistory)
+            );
+        };
+
+        const scrollToBottom = () => {
+            const messagesDiv = document.getElementById('messages');
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        };
+
+        async function sendMessage() {
+            const userInput =
+                document.getElementById('user-input').value;
+            if (!userInput.trim()) return;
+
+            const messagesDiv = document.getElementById('messages');
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+
+            const userAvatar = document.createElement('div');
+            userAvatar.className = 'avatar user-avatar';
+            userAvatar.textContent = 'U';
+
+            const userText = document.createElement('div');
+            userText.className = 'text user-text';
+            userText.textContent = userInput;
+
+            userMessage.appendChild(userText);
+            userMessage.appendChild(userAvatar);
+            messagesDiv.appendChild(userMessage);
+
+            document.getElementById('user-input').value = '';
+
+            chatHistory.push({message: userInput, isUser: true});
+            saveChatHistory(chatHistory);
+
+            const botTypingMessage = document.createElement('div');
+            botTypingMessage.className = 'message bot';
+            botTypingMessage.innerHTML =
+                '<div class="text bot-text">Liqui is typing...</div>';
+            messagesDiv.appendChild(botTypingMessage);
+
+            scrollToBottom();
+
+            const localBackendUrl = "http://localhost:4000/chat";
+            const backendUrl =
+                'https://back-sp9v.onrender.com/chat';
+
+            try {
+
+                const response = await fetch(backendUrl, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        messages: chatHistory.slice(-10)
+                    })
+                });
+
+                if (!response.ok)
+                    throw new Error(
+                        `Server error: ${response.status}`
+                    );
+
+                const data = await response.json();
+
+                messagesDiv.removeChild(botTypingMessage);
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot';
+
+                const botAvatar = document.createElement('div');
+                botAvatar.className = 'avatar bot-avatar';
+
+                const botText = document.createElement('div');
+                botText.className = 'text bot-text';
+                botText.textContent = data.reply || 'No answer';
+
+                botMessage.appendChild(botAvatar);
+                botMessage.appendChild(botText);
+                messagesDiv.appendChild(botMessage);
+
+                chatHistory.push({
+                    message: data.reply,
+                    isUser: false
+                });
+                saveChatHistory(chatHistory);
+            } catch (error) {
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'message bot';
+                errorMessage.innerHTML =
+                    '<div class="text bot-text">Error sending</div>';
+                messagesDiv.appendChild(errorMessage);
+                console.error('Error:', error);
+            }
+
+            scrollToBottom();
+        }
+
         const initialMessages = chatHistory.map((entry) => {
-           const messageDiv = document.createElement('div');
-           messageDiv.className = 'message';
-    
-           if (entry.isUser) {
-              messageDiv.classList.add('user');
-    
-              const userAvatar = document.createElement('div');
-              userAvatar.className = 'avatar user-avatar';
-              userAvatar.textContent = 'U';
-    
-              const userText = document.createElement('div');
-              userText.className = 'text user-text';
-              userText.textContent = entry.message;
-    
-              messageDiv.appendChild(userText);
-              messageDiv.appendChild(userAvatar);
-           } else {
-              messageDiv.classList.add('bot');
-    
-              const botAvatar = document.createElement('div');
-              botAvatar.className = 'avatar bot-avatar';
-    
-              const botText = document.createElement('div');
-              botText.className = 'text bot-text';
-              botText.textContent = entry.message;
-    
-              messageDiv.appendChild(botAvatar);
-              messageDiv.appendChild(botText);
-           }
-    
-           return messageDiv;
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+
+            if (entry.isUser) {
+                messageDiv.classList.add('user');
+
+                const userAvatar = document.createElement('div');
+                userAvatar.className = 'avatar user-avatar';
+                userAvatar.textContent = 'U';
+
+                const userText = document.createElement('div');
+                userText.className = 'text user-text';
+                userText.textContent = entry.message;
+
+                messageDiv.appendChild(userText);
+                messageDiv.appendChild(userAvatar);
+            } else {
+                messageDiv.classList.add('bot');
+
+                const botAvatar = document.createElement('div');
+                botAvatar.className = 'avatar bot-avatar';
+
+                const botText = document.createElement('div');
+                botText.className = 'text bot-text';
+                botText.textContent = entry.message;
+
+                messageDiv.appendChild(botAvatar);
+                messageDiv.appendChild(botText);
+            }
+
+            return messageDiv;
         });
-    
+
         const messagesDiv = document.getElementById('messages');
         initialMessages.forEach((msg) =>
-           messagesDiv.appendChild(msg)
+            messagesDiv.appendChild(msg)
         );
-    
-        scrollToBottom();
-     </script>
 
+        scrollToBottom();
+    </script>
 
 
 
