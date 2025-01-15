@@ -3052,8 +3052,335 @@
             </div>
         </div>
     </div>
+    <div id="chat-container">
+        <div id="messages">
+           <div class="message bot">
+              <div class="avatar bot-avatar"></div>
+              <div class="text bot-text">
+                 Hello! How can I help?
+              </div>
+           </div>
+        </div>
+        <div id="input-container">
+           <input
+              type="text"
+              id="user-input"
+              placeholder="Enter your message"
+           />
+           <button id="send-btn" onclick="sendMessage()">
+              Send
+           </button>
+        </div>
+     </div>
+    
+     <style>
+        #chat-container {
+           width: 800px;
+           height: 450px;
+           background: linear-gradient(to top, #2369aa, #57b7ff);
+           border-radius: 15px;
+           padding: 10px;
+           border: 2px solid black;
+           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           z-index: 10;
+        }
+    
+        #messages {
+           flex-grow: 1;
+           padding: 10px;
+           overflow-y: auto;
+        }
+    
+        #messages::-webkit-scrollbar {
+           width: 10px;
+        }
+    
+        #messages::-webkit-scrollbar-track {
+           background: #57b7ff;
+           border-radius: 10px;
+        }
+    
+        #messages::-webkit-scrollbar-thumb {
+           background: #2369aa; /* Цвет ползунка */
+           border-radius: 10px;
+           border: 2px solid #57b7ff;
+        }
+    
+        #messages::-webkit-scrollbar-thumb:hover {
+           background: #1c5a90; /* Затемнение при наведении */
+        }
+    
+        .message {
+           display: flex;
+           align-items: center;
+           margin-bottom: 10px;
+        }
+    
+        .user {
+           justify-content: flex-end;
+        }
+    
+        .bot {
+           justify-content: flex-start;
+        }
+    
+        .avatar {
+           width: 35px;
+           height: 35px;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-weight: bold;
+           font-size: 18px;
+        }
+    
+        .bot-avatar {
+           background: url('./source/img/logo.png') no-repeat
+              center / cover;
+           margin-right: 10px;
+           border-radius: 50%;
+           width: 40px;
+           color: white;
+           border: 2px solid white;
+        }
+    
+        .user-avatar {
+           background: white;
+           color: black;
+           border: 2px solid black;
+           margin-left: 10px;
+        }
+    
+        .text {
+           padding: 8px;
+           border-radius: 10px;
+           border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+    
+        .bot-text {
+           background-color: rgba(255, 255, 255, 0.3);
+        }
+    
+        .user-text {
+           background-color: rgba(0, 0, 0, 0.3);
+           color: white;
+           border-color: rgba(0, 0, 0, 0.6);
+        }
+    
+        #input-container {
+           display: flex;
+           padding: 10px;
+           background-color: rgba(0, 0, 0, 0.2);
+           border-radius: 10px;
+        }
+    
+        #user-input {
+           flex-grow: 1;
+           padding: 10px;
+           border: none;
+           border-radius: 5px;
+           background-color: #22385e;
+           color: white;
+           outline: none;
+        }
+    
+        #send-btn {
+           background: linear-gradient(
+              to bottom,
+              #57b7ff,
+              #2369aa
+           );
+           border: none;
+           padding: 10px 15px;
+           margin-left: 10px;
+           border-radius: 5px;
+           cursor: pointer;
+           box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    
+        #send-btn:hover {
+           opacity: 0.8;
+        }
+    
+        @media (max-width: 1400px) {
+           #chat-container {
+              width: 600px;
+              height: 350px;
+           }
+        }
+    
+        @media (max-width: 1100px) {
+           #chat-container {
+              width: 100%;
+              height: 500px;
+           }
+        }
+     </style>
+    
+     <script>
+        document
+           .getElementById('user-input')
+           .addEventListener('keypress', function (event) {
+              if (event.key === 'Enter') {
+                 sendMessage();
+              }
+           });
+    
+        let chatHistory =
+           JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+    
+        const saveChatHistory = (newHistory) => {
+           sessionStorage.setItem(
+              'chatHistory',
+              JSON.stringify(newHistory)
+           );
+        };
+    
+        const scrollToBottom = () => {
+           const messagesDiv = document.getElementById('messages');
+           messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        };
+    
+        async function sendMessage() {
+           const userInput =
+              document.getElementById('user-input').value;
+           if (!userInput.trim()) return;
+    
+           const messagesDiv = document.getElementById('messages');
+           const userMessage = document.createElement('div');
+           userMessage.className = 'message user';
+    
+           const userAvatar = document.createElement('div');
+           userAvatar.className = 'avatar user-avatar';
+           userAvatar.textContent = 'U';
+    
+           const userText = document.createElement('div');
+           userText.className = 'text user-text';
+           userText.textContent = userInput;
+    
+           userMessage.appendChild(userText);
+           userMessage.appendChild(userAvatar);
+           messagesDiv.appendChild(userMessage);
+    
+           document.getElementById('user-input').value = '';
+    
+           chatHistory.push({ message: userInput, isUser: true });
+           saveChatHistory(chatHistory);
+    
+           const botTypingMessage = document.createElement('div');
+           botTypingMessage.className = 'message bot';
+           botTypingMessage.innerHTML =
+              '<div class="text bot-text">Liqui is typing...</div>';
+           messagesDiv.appendChild(botTypingMessage);
+    
+           scrollToBottom();
+
+           const localBackendUrl ="http://localhost:4000/chat";
+           const backendUrl =
+                 'https://back-sp9v.onrender.com/chat';
+    
+           try {
+              
+              const response = await fetch(backendUrl, {
+                 method: 'POST',
+                 headers: { 'Content-Type': 'application/json' },
+                 body: JSON.stringify({
+                    messages: chatHistory.slice(-10)
+                 })
+              });
+    
+              if (!response.ok)
+                 throw new Error(
+                    `Server error: ${response.status}`
+                 );
+    
+              const data = await response.json();
+    
+              messagesDiv.removeChild(botTypingMessage);
+              const botMessage = document.createElement('div');
+              botMessage.className = 'message bot';
+    
+              const botAvatar = document.createElement('div');
+              botAvatar.className = 'avatar bot-avatar';
+    
+              const botText = document.createElement('div');
+              botText.className = 'text bot-text';
+              botText.textContent = data.reply || 'No answer';
+    
+              botMessage.appendChild(botAvatar);
+              botMessage.appendChild(botText);
+              messagesDiv.appendChild(botMessage);
+    
+              chatHistory.push({
+                 message: data.reply,
+                 isUser: false
+              });
+              saveChatHistory(chatHistory);
+           } catch (error) {
+              const errorMessage = document.createElement('div');
+              errorMessage.className = 'message bot';
+              errorMessage.innerHTML =
+                 '<div class="text bot-text">Error sending</div>';
+              messagesDiv.appendChild(errorMessage);
+              console.error('Error:', error);
+           }
+    
+           scrollToBottom();
+        }
+    
+        const initialMessages = chatHistory.map((entry) => {
+           const messageDiv = document.createElement('div');
+           messageDiv.className = 'message';
+    
+           if (entry.isUser) {
+              messageDiv.classList.add('user');
+    
+              const userAvatar = document.createElement('div');
+              userAvatar.className = 'avatar user-avatar';
+              userAvatar.textContent = 'U';
+    
+              const userText = document.createElement('div');
+              userText.className = 'text user-text';
+              userText.textContent = entry.message;
+    
+              messageDiv.appendChild(userText);
+              messageDiv.appendChild(userAvatar);
+           } else {
+              messageDiv.classList.add('bot');
+    
+              const botAvatar = document.createElement('div');
+              botAvatar.className = 'avatar bot-avatar';
+    
+              const botText = document.createElement('div');
+              botText.className = 'text bot-text';
+              botText.textContent = entry.message;
+    
+              messageDiv.appendChild(botAvatar);
+              messageDiv.appendChild(botText);
+           }
+    
+           return messageDiv;
+        });
+    
+        const messagesDiv = document.getElementById('messages');
+        initialMessages.forEach((msg) =>
+           messagesDiv.appendChild(msg)
+        );
+    
+        scrollToBottom();
+     </script>
+
+
+
+
+
+
     <div class="framer-38fk7" id="overlay"></div><!--/$--></div>
-<script>(() => {
+<!-- <script>(() => {
     function u() {
         function n(t, e, i) {
             let r = document.createElement("a");
@@ -3116,12 +3443,12 @@
     }
 
     return a
-})()()</script>
+})()()</script> -->
 
 
 <script data-framer-appear-animation="no-preference"></script>
-<script type="module" async="" data-framer-bundle="main" fetchpriority="low"
-        src="sites/6sJan2PXJc9SuGpJhcri6E/script_main.JCOOUKKL.mjs"></script>
+<!-- <script type="module" async="" data-framer-bundle="main" fetchpriority="low"
+        src="sites/6sJan2PXJc9SuGpJhcri6E/script_main.JCOOUKKL.mjs"></script> -->
 <div id="svg-templates"
      style="position: absolute; overflow: hidden; bottom: 0; left: 0; width: 0; height: 0; z-index: 0; contain: strict"
      aria-hidden="true">
