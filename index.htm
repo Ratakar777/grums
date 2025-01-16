@@ -3072,13 +3072,18 @@
             </div>
         </div>
         <div id="input-container">
-            <input type="text" id="user-input" placeholder="Say hello to Acai"/>
+            <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Say hello to Acai"/>
             <button id="send-btn" onclick="sendMessage()">Send</button>
         </div>
     </div>
 
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
         .open-ai-btn {
             position: fixed;
             cursor: pointer;
@@ -3115,6 +3120,7 @@
             align-self: flex-end;
             align-items: center;
             font-size: 17px;
+            font-family: Inter !important;
         }
 
         .blur {
@@ -3154,6 +3160,9 @@
             left: 50%;
             transform: translate(-50%, -50%);
             transition: opacity 0.5s ease-out, visibility 0s 0.5s, transform 0.5s ease-out;
+
+            font-family: "Press Start 2P", serif;
+            font-weight: 400;
         }
 
         /* Make the chat container visible and animate it */
@@ -3167,6 +3176,7 @@
         /* Scrollbar styling */
         #messages {
             flex-grow: 1;
+            margin-top: 10px;
             padding: 10px;
             overflow-y: auto;
         }
@@ -3221,6 +3231,7 @@
             margin-right: 10px;
             border-radius: 50%;
             width: 40px;
+            min-width: 40px;
             color: white;
             border: 2px solid white;
         }
@@ -3229,6 +3240,7 @@
             background: white;
             color: black;
             border: 2px solid black;
+            min-width: 40px;
             margin-left: 10px;
         }
 
@@ -3265,6 +3277,9 @@
             color: white;
             outline: none;
 
+            font-family: "Press Start 2P", serif;
+            font-weight: 400;
+
         }
         #user-input::placeholder {
             color: white;
@@ -3280,6 +3295,9 @@
             border-radius: 5px;
             cursor: pointer;
             /*box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);*/
+
+            font-family: "Press Start 2P", serif;
+            font-weight: 400;
         }
 
         #send-btn:hover {
