@@ -2191,7 +2191,7 @@
                                         style="--font-selector:R0Y7UHJlc3MgU3RhcnQgMlAtcmVndWxhcg==;--framer-font-family:&quot;Press Start 2P&quot;, sans-serif;--framer-font-size:60px;--framer-text-alignment:center;--framer-text-color:rgb(35, 47, 40);--framer-text-stroke-color:rgb(242, 244, 204);--framer-text-stroke-width:0px"
                                         class="framer-text">SAY HELLO TO ACAI</h6></div>
                                 <div class="framer-ofhvc0" data-framer-name="CTA" name="CTA"
-                                     style="opacity:0;transform:translateY(40px)">
+                                     style="transform:translateY(40px)">
                                     <div class="framer-1r04iak-container"><!--$--><a
                                             class="framer-4ivSP framer-ob84kb framer-v-ob84kb framer-6ac9md"
                                             data-framer-name="regular"
@@ -2266,7 +2266,7 @@
                                         style="--font-selector:R0Y7UHJlc3MgU3RhcnQgMlAtcmVndWxhcg==;--framer-font-family:&quot;Press Start 2P&quot;, sans-serif;--framer-font-size:32px;--framer-text-alignment:center;--framer-text-color:rgb(35, 47, 40);--framer-text-stroke-color:rgb(242, 244, 204);--framer-text-stroke-width:0px"
                                         class="framer-text">SAY HELLO TO ACAI</h6></div>
                                 <div class="framer-ofhvc0" data-framer-name="CTA" name="CTA"
-                                     style="opacity:0;transform:translateY(40px)">
+                                     style="transform:translateY(40px)">
                                     <div class="framer-1r04iak-container"><!--$--><a
                                             class="framer-4ivSP framer-ob84kb framer-v-ob84kb framer-6ac9md"
                                             data-framer-name="regular"
@@ -2694,7 +2694,7 @@
                                  style="will-change:transform;opacity:1;transform:none">
                                 <div style="position:absolute;border-radius:inherit;top:0;right:0;bottom:0;left:0"
                                      data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy"
-                                                                                      src="images/LSQGZPTxDt7IuF669z8PoMMco3w.webp"
+                                                                                      src="images/LSQGZPTxDt7IuF669z8PoMMco3w.png"
                                                                                       alt=""
                                                                                       style="display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:contain">
                                 </div>
@@ -2887,7 +2887,7 @@
                                  style="will-change:transform;opacity:1;transform:none">
                                 <div style="position:absolute;border-radius:inherit;top:0;right:0;bottom:0;left:0"
                                      data-framer-background-image-wrapper="true"><img decoding="async" loading="lazy"
-                                                                                      src="images/LSQGZPTxDt7IuF669z8PoMMco3w.webp"
+                                                                                      src="images/LSQGZPTxDt7IuF669z8PoMMco3w.png"
                                                                                       alt=""
                                                                                       style="display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:contain">
                                 </div>
@@ -3020,7 +3020,7 @@
             </div>
         </div>
         <div id="input-container">
-            <input type="text" id="user-input" placeholder="Sey hello to Liqui"/>
+            <input type="text" id="user-input" placeholder="Sey hello to Acai"/>
             <button id="send-btn" onclick="sendMessage()">Send</button>
         </div>
     </div>
@@ -3064,7 +3064,7 @@
         #chat-container {
             width: 800px;
             height: 450px;
-            background: #A1F2EC;
+            background: #367337;
             border-radius: 15px;
             padding: 10px;
             border: 2px solid black;
@@ -3102,14 +3102,14 @@
         }
 
         #messages::-webkit-scrollbar-track {
-            background: #A1F2F6;
+            background: #41f41d;
             border-radius: 10px;
         }
 
         #messages::-webkit-scrollbar-thumb {
-            background: #2369aa;
+            background: #23aa57;
             border-radius: 10px;
-            border: 2px solid #A1F2F6;
+            border: 2px solid #41f41d;
         }
 
         #messages::-webkit-scrollbar-thumb:hover {
@@ -3166,6 +3166,7 @@
 
         .bot-text {
             background-color: rgba(255, 255, 255, 0.3);
+            color: white;
         }
 
         .user-text {
@@ -3177,7 +3178,7 @@
         #input-container {
             display: flex;
             padding: 10px;
-            background-color: rgba(126, 192, 213, 0.2);
+          
             border-radius: 10px;
         }
 
@@ -3186,19 +3187,20 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: #3ed8e1;
-            color: black;
+            background-color: #016602;
+            color: white;
             outline: none;
 
         }
         #user-input::placeholder {
-            color: black;
+            color: white;
             opacity: 1; /* Firefox */
         }
 
         #send-btn {
-            background: #3ed8e1;
+            background: #016602;
             border: none;
+            color: white;
             padding: 10px 15px;
             margin-left: 10px;
             border-radius: 5px;
@@ -3312,14 +3314,14 @@
             const botTypingMessage = document.createElement('div');
             botTypingMessage.className = 'message bot';
             botTypingMessage.innerHTML =
-                '<div class="text bot-text">Liqui is typing...</div>';
+                '<div class="text bot-text">Acai is typing...</div>';
             messagesDiv.appendChild(botTypingMessage);
 
             scrollToBottom();
 
             const localBackendUrl = "http://localhost:4000/chat";
             const backendUrl =
-                'https://back-sp9v.onrender.com/chat';
+                'https://aichat-backend-79ip.onrender.com/chat';
 
             try {
 
